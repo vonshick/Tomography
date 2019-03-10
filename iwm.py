@@ -5,6 +5,13 @@ from bresenham import bresenham
 import pydicom
 from pydicom.data import get_testdata_files
 
+# Questions
+# 1. Does bresenham algorithm has to be implemented by ourselves?
+# 2. What kind of patient's data can be editted by user?
+# 3. What about interactive notebook?
+# 4. What kind of comments should be possible to comment in DICOM files? (ImageComments?)
+
+
 
 image = rgb2gray(io.imread('brain.jpg'))
 
@@ -21,8 +28,15 @@ for c in coordinates:
 plt.imshow(image, 'gray')
 plt.show()
 
-# DICOM files management
+
+
+# # DICOM files management
 # ds = pydicom.dcmread("0015.DCM")
+# print(ds)
 # print(ds.PatientName)
+# print(ds.PatientID)
+# print(ds.StudyDate)
+# print(ds.ImageComments) 
+
 # plt.imshow(ds.pixel_array, cmap = 'gray') 
 # plt.show()
