@@ -3,8 +3,7 @@ from skimage.color import rgb2gray
 from matplotlib import pyplot as plt
 from bresenham import bresenham
 import pydicom
-from pydicom.data import get_testdata_files
-
+from math import floor
 # Questions
 # 1. Does bresenham algorithm has to be implemented by ourselves? YES
 # 2. What kind of patient's data can be editted by user? imie, nazwisko, PESEL
@@ -20,10 +19,21 @@ image = rgb2gray(io.imread('brain.jpg'))
 
 height = image.shape[0]
 width = image.shape[1]
+center = (floor(height/2), floor(width/2))
+
+
+#PUNKT EMITERA I DOKŁADNIE PRZECIWNY 
+# x = cos(alfa) * d
+# y = sin(alfa) * d
+# PRZECIWNY
+# x = cos(alfa + 180) * d
+# y = sin(alfa + 180) * d
+
 
 # bresenham returns list of points 
 # they are under the line ended in points x1, y1, x2, y2 (function arguments)
 coordinates = list(bresenham(0,height-1,width-1,0))
+
 
 #checki if bresenham function works properly
 for c in coordinates:
