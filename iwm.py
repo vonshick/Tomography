@@ -3,7 +3,8 @@ from skimage.color import rgb2gray
 from matplotlib import pyplot as plt
 from bresenham import bresenham
 import pydicom
-from math import floor
+import numpy as np
+from math import floor, ceil, sqrt
 # Questions
 # 1. Does bresenham algorithm has to be implemented by ourselves? YES
 # 2. What kind of patient's data can be editted by user? imie, nazwisko, PESEL
@@ -15,40 +16,61 @@ from math import floor
 # 7. Jakie średnie bierzemy pod uwagę? 
 # 8. Normalizacja: rejestrujemy ILE!!! linii przechodzi przez dany punkt czy KTÓRE?
 
-image = rgb2gray(io.imread('brain.jpg'))
+def count_image_parameters(image):
+    height = image.shape[0]
+    width = image.shape[1]
+    center = ( floor( height/2 ), floor( width/2 ))
+    pixels_lines_count = np.zeros((height, width))
+    radius = ceil( sqrt(height**2 + width**2) / 2 )
+    return height, width, center, radius, pixels_lines_count
 
-height = image.shape[0]
-width = image.shape[1]
-center = (floor(height/2), floor(width/2))
+def radon(alpha, arc, detectors_count, image):
+    height, width, center,  radius, pixels_lines_count = count_image_parameters(image)
+    steps = int( np.pi*2 / alpha)
+    sinogram = np.zeros((detectors_count, steps))
+    for j in range( steps ):
+        print(j)
+        angle = alpha * j
+        x_emitter = center[0] + int(radius * np.cos(angle))
+        y_emitter =  center[1] + int(radius * np.sin(angle))
+        for i in range(detectors_count):
+            x = center[0] + int(radius * np.cos(angle + np.pi - arc/2 + i * arc/(detectors_count-1)))
+            y = center[1] + int(radius * np.sin(angle + np.pi - arc/2 + i * arc/(detectors_count-1)))
+            coordinates = list(bresenham(x_emitter, y_emitter, x, y))
+            # sum = 0
+            for c in coordinates:
+                if c[0] < height and c[1] < width and c[0] > 0 and c[1] > 0: 
+                    sinogram[i][j] += image[c[0]][c[1]]
+                    pixels_lines_count[c[0]][c[1]] += 1
+    return sinogram 
+
+def main():
+    image = rgb2gray(io.imread('brain.jpg'))
+    
+    alpha = np.pi/180
+    arc = np.pi/3
+    detectors_count = 160
+
+    sinogram = radon(alpha,arc,detectors_count, image)
+
+    # plt.imshow(image, 'gray')
+    # plt.show()
+
+    plt.imshow(sinogram, 'gray')
+    plt.show()
+
+main()
 
 
-#PUNKT EMITERA I DOKŁADNIE PRZECIWNY 
-# x = cos(alfa) * d
-# y = sin(alfa) * d
-# PRZECIWNY
-# x = cos(alfa + 180) * d
-# y = sin(alfa + 180) * d
 
 
-# bresenham returns list of points 
-# they are under the line ended in points x1, y1, x2, y2 (function arguments)
-coordinates = list(bresenham(0,height-1,width-1,0))
+# # DICOM files management
+# ds = pydicom.dcmread("0015.DCM")
+# print(ds)
+# print(ds.PatientName)
+# print(ds.PatientID)
+# print(ds.StudyDate)
+# print(ds.ImageComments) 
 
-
-#checki if bresenham function works properly
-for c in coordinates:
-    image[c[0]][c[1]] = 1
-
-plt.imshow(image, 'gray')
-plt.show()
-
-# DICOM files management
-ds = pydicom.dcmread("0015.DCM")
-print(ds)
-print(ds.PatientName)
-print(ds.PatientID)
-print(ds.StudyDate)
-print(ds.ImageComments) 
-
-plt.imshow(ds.pixel_array, cmap = 'gray') 
-plt.show()
+# plt.imshow(ds.pixel_array, cmap = 'gray') 
+# plt.show()
