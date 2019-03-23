@@ -10,8 +10,6 @@ from math import floor, ceil, sqrt
 # Questions
 # 1. Does bresenham algorithm has to be implemented by ourselves? YES
 # 2. What kind of patient's data can be editted by user? imie, nazwisko, PESEL
-# 3. What about interactive notebook?
-# 4. What kind of comments should be possible to comment in DICOM files? (ImageComments?)
 
 def count_image_parameters(image):
     height = image.shape[0]
@@ -19,7 +17,6 @@ def count_image_parameters(image):
     center = ( floor( height/2 ), floor( width/2 ))
     pixels_lines_count = np.zeros((height, width))
     radius = ceil( sqrt(height**2 + width**2) / 2 )
-
     return height, width, center, radius, pixels_lines_count
 
 
@@ -45,11 +42,10 @@ def radon(alpha, arc, detectors_count, image):
             
             for c in coordinates:
                 if c[0] < height and c[1] < width and c[0] >= 0 and c[1] >= 0: 
-                    image[c[0], c[1]]= 1
                     sinogram[j, i] += image[c[0], c[1]]
                     pixels_lines_count[c[0], c[1]] += 1
 
-    return sinogram , pixels_lines_count, emitter_coordinates, detector_coordinates, image
+    return sinogram , pixels_lines_count, emitter_coordinates, detector_coordinates
 
 def reverse_radon(sinogram, pixels_lines_count, emitters, detectors):
     image = np.array([])
@@ -57,10 +53,10 @@ def reverse_radon(sinogram, pixels_lines_count, emitters, detectors):
     steps = sinogram.shape[1]
     height = pixels_lines_count.shape[0]
     width = pixels_lines_count.shape[1]
-    print("Detectors count: "+detectors_count)
-    print("Steps: " + steps)
-    print("Image height: "+height)
-    print("Image width: "+width)
+    print("Detectors count: "+repr(detectors_count))
+    print("Steps: " + repr(steps))
+    print("Image height: "+repr(height))
+    print("Image width: "+repr(width))
 
     image = np.zeros(( height, width ))
     
@@ -90,16 +86,13 @@ def main():
     
     alpha = np.pi/180
     arc = np.pi/12
-    detectors_count = 100
+    detectors_count = 160
 
-    sinogram, pixels_lines_count, emitter_coordinates, detector_coordinates, image  = radon(alpha,arc,detectors_count, image)
-    plt.imshow(image, 'gray')
-    plt.show()
+    sinogram, pixels_lines_count, emitter_coordinates, detector_coordinates = radon(alpha,arc,detectors_count, image)
     # sinogram = normalize_image(sinogram)    
     # io.imsave( 'sinogram.png', sinogram)
     plt.imshow(sinogram, 'gray')
     plt.show()
-
 
     image = reverse_radon(sinogram, pixels_lines_count, emitter_coordinates, detector_coordinates)
     plt.imshow(image, 'gray')
