@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>C.7.6.3 Image Pixel Module</title>
+      <link rel="stylesheet" type="text/css" href="dicom.css" />
+      <meta name="generator" content="DocBook XSL Stylesheets V1.78.1" />
+      <link rel="home" href="PS3.3.html" title="PS3.3" />
+      <link rel="up" href="sect_C.7.6.html" title="C.7.6 Common Image IE Modules" />
+      <link rel="prev" href="sect_C.7.6.2.html" title="C.7.6.2 Image Plane Module" />
+      <link rel="next" href="sect_C.7.6.4.html" title="C.7.6.4 Contrast/Bolus Module" />
+      <style type="text/css"><![CDATA[
+	p { font-size: 15px; }
+      ]]></style>
+   </head>
+   <body>
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center" rowspan="1">C.7.6.3 Image Pixel Module</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left" rowspan="1" colspan="1">
+                  <a accesskey="p" href="sect_C.7.6.2.html" shape="rect">Prev</a> </td>
+               <th width="60%" align="center" rowspan="1" colspan="1">C.7.6 Common Image IE Modules</th>
+               <td width="20%" align="right" rowspan="1" colspan="1"> <a accesskey="n" href="sect_C.7.6.4.html" shape="rect">Next</a>
+               </td>
+            </tr>
+         </table>
+         <hr />
+      </div>
+      <div class="section">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h4 class="title">
+                     <a id="sect_C.7.6.3" shape="rect"></a>C.7.6.3 Image Pixel Module</h4>
+               </div>
+            </div>
+         </div>
+         <p>
+            <a class="xref" href="sect_C.7.6.3.html#table_C.7-11a" title="Table C.7-11a. Image Pixel Module Attributes" shape="rect">Table C.7-11a</a> describes the Image Pixel Module.</p>
+         <div class="table">
+            <a id="table_C.7-11a" shape="rect"></a>
+            <p class="title">
+               <strong>Table C.7-11a. Image Pixel Module Attributes</strong>
+            </p>
+            <div class="table-contents">
+               <table frame="box" rules="all">
+                  <thead>
+                     <tr valign="top">
+                        <th align="center" rowspan="1" colspan="1">
+                           <p>Attribute Name</p>
+                        </th>
+                        <th align="center" rowspan="1" colspan="1">
+                           <p>Tag</p>
+                        </th>
+                        <th align="center" rowspan="1" colspan="1">
+                           <p>Type</p>
+                        </th>
+                        <th align="center" rowspan="1" colspan="1">
+                           <p>Attribute Description</p>
+                        </th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" colspan="3" rowspan="1">
+                           <p>
+                              <span class="italic">Include <a class="xref" href="sect_C.7.6.3.html#table_C.7-11b" title="Table C.7-11b. Image Pixel Macro Attributes" shape="rect">Table C.7-11b “Image Pixel Macro Attributes”</a>
+                              </span>
+                           </p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p></p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Pixel Data Provider URL</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,7FE0)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1C</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>A URL of a provider service that supplies the pixel data of the Image.</p>
+                           <p>Required if the image is to be transferred in one of the following presentation contexts identified by Transfer Syntax UID:</p>
+                           <div class="itemizedlist">
+                              <ul class="itemizedlist" style="list-style-type: disc; ">
+                                 <li class="listitem">
+                                    <p>1.2.840.10008.1.2.4.94 (DICOM JPIP Referenced Transfer Syntax)</p>
+                                 </li>
+                                 <li class="listitem">
+                                    <p>1.2.840.10008.1.2.4.95 (DICOM JPIP Referenced Deflate Transfer Syntax)</p>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                              <h3 class="title">Note</h3>
+                              <p>The VR of this attribute has changed from UT to UR.</p>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Pixel Padding Range Limit</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0121)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1C</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Pixel value that represents one limit (inclusive) of a range of padding values used together with Pixel Padding Value (0028,0120) as defined in the General Equipment Module. See <a class="xref" href="sect_C.7.5.html#sect_C.7.5.1.1.2" title="C.7.5.1.1.2 Pixel Padding Value and Pixel Padding Range Limit" shape="rect">Section C.7.5.1.1.2</a> for further explanation.</p>
+                           <p>Required if pixel padding is to be defined as a range rather than a single value.</p>
+                           <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                              <h3 class="title">Note</h3>
+                              <div class="orderedlist">
+                                 <ol class="orderedlist" type="1">
+                                    <li class="listitem">
+                                       <p>The Value Representation of this Attribute is determined by the value of Pixel Representation (0028,0103).</p>
+                                    </li>
+                                    <li class="listitem">
+                                       <p>Pixel Padding Value (0028,0120) is also required when this Attribute is present.</p>
+                                    </li>
+                                 </ol>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <br class="table-break" clear="none" />
+         <p>
+            <a class="xref" href="sect_C.7.6.3.html#table_C.7-11b" title="Table C.7-11b. Image Pixel Macro Attributes" shape="rect">Table C.7-11b</a> specifies the common attributes that describe the pixel data of the image.</p>
+         <div class="table">
+            <a id="table_C.7-11b" shape="rect"></a>
+            <p class="title">
+               <strong>Table C.7-11b. Image Pixel Macro Attributes</strong>
+            </p>
+            <div class="table-contents">
+               <table frame="box" rules="all">
+                  <thead>
+                     <tr valign="top">
+                        <th align="center" rowspan="1" colspan="1">
+                           <p>Attribute Name</p>
+                        </th>
+                        <th align="center" rowspan="1" colspan="1">
+                           <p>Tag</p>
+                        </th>
+                        <th align="center" rowspan="1" colspan="1">
+                           <p>Type</p>
+                        </th>
+                        <th align="center" rowspan="1" colspan="1">
+                           <p>Attribute Description</p>
+                        </th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Samples per Pixel</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0002)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Number of samples (planes) in this image. See <a class="xref" href="sect_C.7.6.3.html#sect_C.7.6.3.1.1" title="C.7.6.3.1.1 Samples Per Pixel" shape="rect">Section C.7.6.3.1.1</a> for further explanation.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Photometric Interpretation</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0004)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Specifies the intended interpretation of the pixel data. See <a class="xref" href="sect_C.7.6.3.html#sect_C.7.6.3.1.2" title="C.7.6.3.1.2 Photometric Interpretation" shape="rect">Section C.7.6.3.1.2</a> for further explanation.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Rows</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0010)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Number of rows in the image.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Columns</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0011)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Number of columns in the image</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Bits Allocated</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0100)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Number of bits allocated for each pixel sample. Each sample shall have the same number of bits allocated. See <a href="../part05/PS3.5.html" class="olink" shape="rect">PS3.5</a> for further explanation.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Bits Stored</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0101)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Number of bits stored for each pixel sample. Each sample shall have the same number of bits stored. See <a href="../part05/PS3.5.html" class="olink" shape="rect">PS3.5</a> for further explanation.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>High Bit</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0102)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Most significant bit for pixel sample data. Each sample shall have the same high bit. See <a href="../part05/PS3.5.html" class="olink" shape="rect">PS3.5</a> for further explanation.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Pixel Representation</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0103)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Data representation of the pixel samples. Each sample shall have the same pixel representation.</p>
+                           <div class="variablelist">
+                              <p class="title">
+                                 <strong>Enumerated Values:</strong>
+                              </p>
+                              <dl class="variablelist compact">
+                                 <dt>
+                                    <span class="term">0000H</span>
+                                 </dt>
+                                 <dd>
+                                    <p>unsigned integer.</p>
+                                 </dd>
+                                 <dt>
+                                    <span class="term">0001H</span>
+                                 </dt>
+                                 <dd>
+                                    <p>2's complement</p>
+                                 </dd>
+                              </dl>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Pixel Data</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(7FE0,0010)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1C</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>A data stream of the pixel samples that comprise the Image. See <a class="xref" href="sect_C.7.6.3.html#sect_C.7.6.3.1.4" title="C.7.6.3.1.4 Pixel Data" shape="rect">Section C.7.6.3.1.4</a> for further explanation.</p>
+                           <p>Required if Pixel Data Provider URL (0028,7FE0) is not present.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Planar Configuration</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0006)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1C</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Indicates whether the pixel data are sent color-by-plane or color-by-pixel. Required if Samples per Pixel (0028,0002) has a value greater than 1. See <a class="xref" href="sect_C.7.6.3.html#sect_C.7.6.3.1.3" title="C.7.6.3.1.3 Planar Configuration" shape="rect">Section C.7.6.3.1.3</a> for further explanation.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Pixel Aspect Ratio</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0034)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1C</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Ratio of the vertical size and horizontal size of the pixels in the image specified by a pair of integer values where the first value is the vertical pixel size, and the second value is the horizontal pixel size. Required if the aspect ratio values do not have a ratio of 1:1 and the physical pixel spacing is not specified by Pixel Spacing (0028,0030), or Imager Pixel Spacing (0018,1164) or Nominal Scanned Pixel Spacing (0018,2010), either for the entire Image or per-frame in a Functional Group Macro. See <a class="xref" href="sect_C.7.6.3.html#sect_C.7.6.3.1.7" title="C.7.6.3.1.7 Pixel Aspect Ratio" shape="rect">Section C.7.6.3.1.7</a>.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Smallest Image Pixel Value</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0106)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>3</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>The minimum actual pixel value encountered in this image.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Largest Image Pixel Value</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,0107)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>3</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>The maximum actual pixel value encountered in this image.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Red Palette Color Lookup Table Descriptor</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,1101)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1C</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Specifies the format of the Red Palette Color Lookup Table Data (0028,1201). Required if Photometric Interpretation (0028,0004) has a value of PALETTE COLOR or Pixel Presentation (0008,9205) at the image level equals COLOR or MIXED. See <a class="xref" href="sect_C.7.6.3.html#sect_C.7.6.3.1.5" title="C.7.6.3.1.5 Palette Color Lookup Table Descriptor" shape="rect">Section C.7.6.3.1.5</a> for further explanation.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Green Palette Color Lookup Table Descriptor</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,1102)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1C</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Specifies the format of the Green Palette Color Lookup Table Data (0028,1202). Required if Photometric Interpretation (0028,0004) has a value of PALETTE COLOR or Pixel Presentation (0008,9205) at the image level equals COLOR or MIXED. See <a class="xref" href="sect_C.7.6.3.html#sect_C.7.6.3.1.5" title="C.7.6.3.1.5 Palette Color Lookup Table Descriptor" shape="rect">Section C.7.6.3.1.5</a> for further explanation.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Blue Palette Color Lookup Table Descriptor</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,1103)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1C</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Specifies the format of the Blue Palette Color Lookup Table Data (0028,1203). Required if Photometric Interpretation (0028,0004) has a value of PALETTE COLOR or Pixel Presentation (0008,9205) at the image level equals COLOR or MIXED. See <a class="xref" href="sect_C.7.6.3.html#sect_C.7.6.3.1.5" title="C.7.6.3.1.5 Palette Color Lookup Table Descriptor" shape="rect">Section C.7.6.3.1.5</a> for further explanation.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Red Palette Color Lookup Table Data</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,1201)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1C</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Red Palette Color Lookup Table Data. Required if Photometric Interpretation (0028,0004) has a value of PALETTE COLOR or Pixel Presentation (0008,9205) at the image level equals COLOR or MIXED. See <a class="xref" href="sect_C.7.6.3.html#sect_C.7.6.3.1.6" title="C.7.6.3.1.6 Palette Color Lookup Table Data" shape="rect">Section C.7.6.3.1.6</a> for further explanation.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Green Palette Color Lookup Table Data</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,1202)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1C</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Green Palette Color Lookup Table Data. Required if Photometric Interpretation (0028,0004) has a value of PALETTE COLOR or Pixel Presentation (0008,9205) at the image level equals COLOR or MIXED. See <a class="xref" href="sect_C.7.6.3.html#sect_C.7.6.3.1.6" title="C.7.6.3.1.6 Palette Color Lookup Table Data" shape="rect">Section C.7.6.3.1.6</a> for further explanation.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Blue Palette Color Lookup Table Data</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,1203)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>1C</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>Blue Palette Color Lookup Table Data. Required if Photometric Interpretation (0028,0004) has a value of PALETTE COLOR or Pixel Presentation (0008,9205) at the image level equals COLOR or MIXED. See <a class="xref" href="sect_C.7.6.3.html#sect_C.7.6.3.1.6" title="C.7.6.3.1.6 Palette Color Lookup Table Data" shape="rect">Section C.7.6.3.1.6</a> for further explanation.</p>
+                        </td>
+                     </tr>
+                     <tr valign="top">
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>ICC Profile</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>(0028,2000)</p>
+                        </td>
+                        <td align="center" rowspan="1" colspan="1">
+                           <p>3</p>
+                        </td>
+                        <td align="left" rowspan="1" colspan="1">
+                           <p>An ICC Profile encoding the transformation of device-dependent color stored pixel values into PCS-Values.</p>
+                           <p>See <a class="xref" href="sect_C.11.15.html#sect_C.11.15.1.1" title="C.11.15.1.1 ICC Profile" shape="rect">Section C.11.15.1.1</a>.</p>
+                           <p>When present, defines the color space of color Pixel Data (7FE0,0010) values, and the output of Palette Color Lookup Table Data (0028,1201-1203).</p>
+                           <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                              <h3 class="title">Note</h3>
+                              <p>The profile applies only to Pixel Data (7FE0,0010) at the same level of the Data Set and not to any icons nested within sequences, which may or may not have their own ICC profile specified.</p>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <br class="table-break" clear="none" />
+         <div class="section">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h5 class="title">
+                        <a id="sect_C.7.6.3.1" shape="rect"></a>C.7.6.3.1 Image Pixel Attribute Descriptions</h5>
+                  </div>
+               </div>
+            </div>
+            <div class="section">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h6 class="title">
+                           <a id="sect_C.7.6.3.1.1" shape="rect"></a>C.7.6.3.1.1 Samples Per Pixel</h6>
+                     </div>
+                  </div>
+               </div>
+               <p>Samples per Pixel (0028,0002) is the number of separate planes in this image. One and three image planes are defined. Other numbers of image planes are allowed, but their meaning is not defined by this Standard.</p>
+               <p>For monochrome (gray scale) and palette color images, the number of planes is 1. For RGB and other three vector color models, the value of this attribute is 3.</p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <h3 class="title">Note</h3>
+                  <p>The use of a value of 4 was previously described, but the Photometric Interpretations that used it have been retired.</p>
+               </div>
+               <p>All image planes shall have the same number of Rows (0028,0010), Columns (0028,0011), Bits Allocated (0028,0100), Bits Stored (0028,0101), High Bit (0028,0102), Pixel Representation (0028,0103), and Pixel Aspect Ratio (0028,0034).</p>
+               <p>The data in each pixel may be represented as a "Composite Pixel Code". If Samples Per Pixel is one, the Composite Pixel Code is just the "n" bit pixel sample, where "n" = Bits Allocated. If Samples Per Pixel is greater than one, Composite Pixel Code is a "k" bit concatenation of samples, where "k" = Bits Allocated multiplied by Samples Per Pixel, and with the sample representing the vector color designated first in the Photometric Interpretation name comprising the most significant bits of the Composite Pixel Code, followed in order by the samples representing the next vector colors, with the sample representing the vector color designated last in the Photometric Interpretation name comprising the least significant bits of the Composite Pixel Code. For example, for Photometric Interpretation = "RGB", the most significant "Bits Allocated" bits contain the Red sample, the next "Bits Allocated" bits contain the Green sample, and the least significant "Bits Allocated"
+              bits contain the Blue sample.</p>
+            </div>
+            <div class="section">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h6 class="title">
+                           <a id="sect_C.7.6.3.1.2" shape="rect"></a>C.7.6.3.1.2 Photometric Interpretation</h6>
+                     </div>
+                  </div>
+               </div>
+               <p>The value of Photometric Interpretation (0028,0004) specifies the intended interpretation of the image pixel data.</p>
+               <p>See <a href="../part05/PS3.5.html" class="olink" shape="rect">PS3.5</a> for restrictions imposed by compressed Transfer Syntaxes.</p>
+               <p>The following values are defined. Other values are permitted but the meaning is not defined by this Standard.</p>
+               <div class="variablelist">
+                  <p class="title">
+                     <strong>Defined Terms:</strong>
+                  </p>
+                  <dl class="variablelist">
+                     <dt>
+                        <span class="term">MONOCHROME1</span>
+                     </dt>
+                     <dd>
+                        <p>Pixel data represent a single monochrome image plane. The minimum sample value is intended to be displayed as white after any VOI gray scale transformations have been performed. See <a href="../part04/PS3.4.html" class="olink" shape="rect">PS3.4</a>. This value may be used only when Samples per Pixel (0028,0002) has a value of 1.</p>
+                     </dd>
+                     <dt>
+                        <span class="term">MONOCHROME2</span>
+                     </dt>
+                     <dd>
+                        <p>Pixel data represent a single monochrome image plane. The minimum sample value is intended to be displayed as black after any VOI gray scale transformations have been performed. See <a href="../part04/PS3.4.html" class="olink" shape="rect">PS3.4</a>. This value may be used only when Samples per Pixel (0028,0002) has a value of 1.</p>
+                     </dd>
+                     <dt>
+                        <span class="term">PALETTE COLOR</span>
+                     </dt>
+                     <dd>
+                        <p>Pixel data describe a color image with a single sample per pixel (single image plane). The pixel value is used as an index into each of the Red, Blue, and Green Palette Color Lookup Tables (0028,1101-1103&amp;1201-1203). This value may be used only when Samples per Pixel (0028,0002) has a value of 1. When the Photometric Interpretation is Palette Color; Red, Blue, and Green Palette Color Lookup Tables shall be present.</p>
+                     </dd>
+                     <dt>
+                        <span class="term">RGB</span>
+                     </dt>
+                     <dd>
+                        <p>Pixel data represent a color image described by red, green, and blue image planes. The minimum sample value for each color plane represents minimum intensity of the color. This value may be used only when Samples per Pixel (0028,0002) has a value of 3.</p>
+                     </dd>
+                     <dt>
+                        <span class="term">HSV</span>
+                     </dt>
+                     <dd>
+                        <p>
+                           <span class="italic">Retired.</span>
+                        </p>
+                     </dd>
+                     <dt>
+                        <span class="term">ARGB</span>
+                     </dt>
+                     <dd>
+                        <p>
+                           <span class="italic">Retired.</span>
+                        </p>
+                     </dd>
+                     <dt>
+                        <span class="term">CMYK</span>
+                     </dt>
+                     <dd>
+                        <p>
+                           <span class="italic">Retired.</span>
+                        </p>
+                     </dd>
+                     <dt>
+                        <span class="term">YBR_FULL</span>
+                     </dt>
+                     <dd>
+                        <p>Pixel data represent a color image described by one luminance (Y) and two chrominance planes (CB and CR). This photometric interpretation may be used only when Samples per Pixel (0028,0002) has a value of 3. Black is represented by Y equal to zero. The absence of color is represented by both CB and CR values equal to half full scale.</p>
+                        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <h3 class="title">Note</h3>
+                           <p>In the case where Bits Allocated (0028,0100) has value of 8 half full scale is 128.</p>
+                        </div>
+                        <p>In the case where Bits Allocated (0028,0100) has a value of 8 then the following equations convert between RGB and YCBCR Photometric Interpretation.</p>
+                        <p>Y = + .2990R + .5870G + .1140B</p>
+                        <p>CB= - .1687R - .3313G + .5000B + 128</p>
+                        <p>CR= + .5000R - .4187G - .0813B + 128</p>
+                        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <h3 class="title">Note</h3>
+                           <p>The above is based on CCIR Recommendation 601-2 dated 1990.</p>
+                        </div>
+                     </dd>
+                     <dt>
+                        <span class="term">YBR_FULL_422</span>
+                     </dt>
+                     <dd>
+                        <p>The same as YBR_FULL except that the CB and CR values are sampled horizontally at half the Y rate and as a result there are half as many CB and CR values as Y values.</p>
+                        <p>This Photometric Interpretation is only allowed with Planar Configuration (0028,0006) equal to 0. Two Y values shall be stored followed by one CB and one CR value. The CB and CR values shall be sampled at the location of the first of the two Y values. For each Row of Pixels, the first CB and CR samples shall be at the location of the first Y sample. The next CB and CR samples shall be at the location of the third Y sample etc.</p>
+                        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <h3 class="title">Note</h3>
+                           <p>This subsampling is often referred to as cosited sampling.</p>
+                        </div>
+                     </dd>
+                     <dt>
+                        <span class="term">YBR_PARTIAL_422</span>
+                     </dt>
+                     <dd>
+                        <p>The same as YBR_FULL_422 except that:</p>
+                        <div class="orderedlist">
+                           <ol class="orderedlist" type="1">
+                              <li class="listitem">
+                                 <p>black corresponds to Y = 16;</p>
+                              </li>
+                              <li class="listitem">
+                                 <p>Y is restricted to 220 levels (i.e., the maximum value is 235);</p>
+                              </li>
+                              <li class="listitem">
+                                 <p>CB and CR each has a minimum value of 16;</p>
+                              </li>
+                              <li class="listitem">
+                                 <p>CB and CR are restricted to 225 levels (i.e., the maximum value is 240);</p>
+                              </li>
+                              <li class="listitem">
+                                 <p>lack of color is represented by CB and CR equal to 128.</p>
+                              </li>
+                           </ol>
+                        </div>
+                        <p>In the case where Bits Allocated (0028,0100) has value of 8 then the following equations convert between RGB and YBR_PARTIAL_422 Photometric Interpretation</p>
+                        <p>Y = + .2568R + .5041G + .0979B + 16</p>
+                        <p>CB= - .1482R - .2910G + .4392B + 128</p>
+                        <p>CR= + .4392R - .3678G - .0714B + 128</p>
+                        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <h3 class="title">Note</h3>
+                           <p>The above is based on CCIR Recommendation 601-2 dated 1990.</p>
+                        </div>
+                     </dd>
+                     <dt>
+                        <span class="term">YBR_PARTIAL_420</span>
+                     </dt>
+                     <dd>
+                        <p>The same as YBR_PARTIAL_422 except that the CB and CR values are sampled horizontally and vertically at half the Y rate and as a result there are four times less CB and CR values than Y values, versus twice less for YBR_PARTIAL_422.</p>
+                        <p>This Photometric Interpretation is only allowed with Planar Configuration (0028,0006) equal to 0. The CB and CR values shall be sampled at the location of the first of the two Y values. For the first Row of Pixels (etc.), the first CB and CR samples shall be at the location of the first Y sample. The next CB and CR samples shall be at the location of the third Y sample etc. The next Rows of Pixels containing CB and CR samples (at the same locations than for the first Row) will be the third etc.</p>
+                     </dd>
+                     <dt>
+                        <span class="term">YBR_ICT</span>
+                     </dt>
+                     <dd>
+                        <p>Irreversible Color Transformation:</p>
+                        <p>Pixel data represent a color image described by one luminance (Y) and two chrominance planes (CB and CR). This photometric interpretation may be used only when Samples per Pixel (0028,0002) has a value of 3. Black is represented by Y equal to zero. The absence of color is represented by both CB and CR values equal to zero.</p>
+                        <p>Regardless of the value of Bits Allocated (0028,0100), the following equations convert between RGB and YCBCR Photometric Interpretation.</p>
+                        <p>Y = + .29900R + .58700G + .11400B</p>
+                        <p>CB= - .16875R - .33126G + .50000B</p>
+                        <p>CR= + .50000R - .41869G - .08131B</p>
+                        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <h3 class="title">Note</h3>
+                           <div class="orderedlist">
+                              <ol class="orderedlist" type="1">
+                                 <li class="listitem">
+                                    <p>The above is based on ISO/IEC 15444-1 (JPEG 2000).</p>
+                                 </li>
+                                 <li class="listitem">
+                                    <p>In a JPEG 2000 bit stream, DC level shifting (used if the untransformed components are unsigned) is applied before forward color transformation, and the transformed components may be signed (unlike in JPEG ISO/IEC 10918-1).</p>
+                                 </li>
+                                 <li class="listitem">
+                                    <p>In JPEG 2000, spatial down-sampling of the chrominance components, if performed, is signaled in the JPEG 2000 bit stream.</p>
+                                 </li>
+                              </ol>
+                           </div>
+                        </div>
+                     </dd>
+                     <dt>
+                        <span class="term">YBR_RCT</span>
+                     </dt>
+                     <dd>
+                        <p>Reversible Color Transformation:</p>
+                        <p>Pixel data represent a color image described by one luminance (Y) and two chrominance planes (CB and CR). This photometric interpretation may be used only when Samples per Pixel (0028,0002) has a value of 3. Black is represented by Y equal to zero. The absence of color is represented by both CB and CR values equal to zero.</p>
+                        <p>Regardless of the value of Bits Allocated (0028,0100), the following equations convert between RGB and YBR_RCT Photometric Interpretation.</p>
+                        <p>Y = ⌊(R + 2G +B) / 4⌋ (Note: ⌊…⌋ mean floor)</p>
+                        <p>CB= B - G</p>
+                        <p>CR= R - G</p>
+                        <p>The following equations convert between YBR_RCT and RGB Photometric Interpretation.</p>
+                        <p>G = Y - ⌊ (CR+ CB) / 4⌋</p>
+                        <p>R = CR+ G</p>
+                        <p>B = CB+ G</p>
+                        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                           <h3 class="title">Note</h3>
+                           <div class="orderedlist">
+                              <ol class="orderedlist" type="1">
+                                 <li class="listitem">
+                                    <p>The above is based on ISO/IEC 15444-1 (JPEG 2000).</p>
+                                 </li>
+                                 <li class="listitem">
+                                    <p>In a JPEG 2000 bit stream, DC level shifting (used if the untransformed components are unsigned) is applied before forward color transformation, and the transformed components may be signed (unlike in JPEG ISO/IEC 10918-1).</p>
+                                 </li>
+                                 <li class="listitem">
+                                    <p>This photometric interpretation is a reversible approximation to the YUV transformation used in PAL and SECAM.</p>
+                                 </li>
+                              </ol>
+                           </div>
+                        </div>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
+            <div class="section">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h6 class="title">
+                           <a id="sect_C.7.6.3.1.3" shape="rect"></a>C.7.6.3.1.3 Planar Configuration</h6>
+                     </div>
+                  </div>
+               </div>
+               <p>Planar Configuration (0028,0006) indicates whether the color pixel data are sent color-by-plane or color-by-pixel. This Attribute shall be present if Samples per Pixel (0028,0002) has a value greater than 1. It shall not be present otherwise.</p>
+               <div class="variablelist">
+                  <p class="title">
+                     <strong>Enumerated Values:</strong>
+                  </p>
+                  <dl class="variablelist compact">
+                     <dt>
+                        <span class="term">0</span>
+                     </dt>
+                     <dd>
+                        <p>The sample values for the first pixel are followed by the sample values for the second pixel, etc. For RGB images, this means the order of the pixel values sent shall be R1, G1, B1, R2, G2, B2, …, etc.</p>
+                     </dd>
+                     <dt>
+                        <span class="term">1</span>
+                     </dt>
+                     <dd>
+                        <p>Each color plane shall be sent contiguously. For RGB images, this means the order of the pixel values sent is R1, R2, R3, …, G1, G2, G3, …, B1, B2, B3, etc.</p>
+                     </dd>
+                  </dl>
+               </div>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <h3 class="title">Note</h3>
+                  <p>Planar Configuration (0028,0006) is not meaningful when a compression transfer syntax is used that involves reorganization of sample components in the compressed bit stream. In such cases, since the Attribute is required to be sent, then an appropriate value to use may be specified in the description of the Transfer Syntax in <a href="../part05/PS3.5.html" class="olink" shape="rect">PS3.5</a>, though in all likelihood the value of the Attribute will be ignored by the receiving implementation.</p>
+               </div>
+            </div>
+            <div class="section">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h6 class="title">
+                           <a id="sect_C.7.6.3.1.4" shape="rect"></a>C.7.6.3.1.4 Pixel Data</h6>
+                     </div>
+                  </div>
+               </div>
+               <p>Pixel Data (7FE0,0010) for this image. The order of pixels sent for each image plane is left to right, top to bottom, i.e., the upper left pixel (labeled 1,1) is sent first followed by the remainder of row 1, followed by the first pixel of row 2 (labeled 2,1) then the remainder of row 2 and so on.</p>
+               <p>For multi-plane images see Planar Configuration (0028,0006) in this Section.</p>
+            </div>
+            <div class="section">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h6 class="title">
+                           <a id="sect_C.7.6.3.1.5" shape="rect"></a>C.7.6.3.1.5 Palette Color Lookup Table Descriptor</h6>
+                     </div>
+                  </div>
+               </div>
+               <p>The three values of Palette Color Lookup Table Descriptor (0028,1101-1104) describe the format of the Lookup Table Data in the corresponding Data Element (0028,1201-1204) or (0028,1221-1223). In this section, the term "input value" is either the Palette Color Lookup Table input value described in the Enhanced Palette Color Lookup Table Sequence (0028,140B) or if that attribute is absent, the stored pixel value.</p>
+               <p>The first Palette Color Lookup Table Descriptor value is the number of entries in the lookup table. When the number of table entries is equal to 2<sup>16</sup> then this value shall be 0. The first value shall be identical for each of the Red, Green, Blue and Alpha Palette Color Lookup Table Descriptors.</p>
+               <p>The second Palette Color Lookup Table Descriptor value is the first input value mapped. This input value is mapped to the first entry in the Lookup Table Data. All input values less than the first value mapped are also mapped to the first entry in the Lookup Table Data if the Photometric Interpretation is PALETTE COLOR.</p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <h3 class="title">Note</h3>
+                  <p>In the case of the Supplemental Palette Color LUT, the stored pixel values less than the second descriptor value are grayscale values.</p>
+               </div>
+               <p>An input value one greater than the first value mapped is mapped to the second entry in the Lookup Table Data. Subsequent input values are mapped to the subsequent entries in the Lookup Table Data up to an input value equal to number of entries + first value mapped - 1, which is mapped to the last entry in the Lookup Table Data. Input values greater than or equal to number of entries + first value mapped are also mapped to the last entry in the Lookup Table Data. The second value shall be identical for each of the Red, Green, Blue and Alpha Palette Color Lookup Table Descriptors.</p>
+               <p>The third Palette Color Lookup Table Descriptor value specifies the number of bits for each entry in the Lookup Table Data. It shall take the value of 8 or 16. The LUT Data shall be stored in a format equivalent to 8 bits allocated when the number of bits for each entry is 8, and 16 bits allocated when the number of bits for each entry is 16, where in both cases the high bit is equal to bits allocated-1. The third value shall be identical for each of the Red, Green and Blue Palette Color Lookup Table Descriptors.</p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <h3 class="title">Note</h3>
+                  <p>Some implementations have encoded 8 bit entries with 16 bits allocated, padding the high bits; this can be detected by comparing the number of entries specified in the LUT Descriptor with the actual value length of the LUT Data entry. The value length in bytes should equal the number of entries if bits allocated is 8, and be twice as long if bits allocated is 16.</p>
+               </div>
+               <p>When the Red, Green, or Blue Palette Color Lookup Table Descriptor (0028,1101-1103) are used as part of the Palette Color Lookup Table Module or the Supplemental Palette Color Lookup Table Module in an Image or Presentation State IOD, the third value shall be equal to 16. When the Alpha Palette Color Lookup Table Descriptor (0028,1104) is used, the third value shall be equal to 8.</p>
+               <p>When the Red, Green, or Blue Palette Color Lookup Table Descriptor (0028,1101-1103) are used as part of the Palette Color Lookup Table Module in a Color Palette IOD, the 3rd value of Palette Color Lookup Table Descriptor (0028,1101-1103) (i.e, the number of bits for each entry in the Lookup Table Data) shall be 8.</p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <h3 class="title">Note</h3>
+                  <div class="orderedlist">
+                     <ol class="orderedlist" type="1">
+                        <li class="listitem">
+                           <p>A value of 16 indicates the Lookup Table Data will range from (0,0,0) minimum intensity to (65535,65535,65535) maximum intensity.</p>
+                        </li>
+                        <li class="listitem">
+                           <p>Since the Palette Color Lookup Table Descriptor (0028,1101-1104) Attributes are multi-valued, in an Explicit VR Transfer Syntax, only one value representation (US or SS) may be specified, even though the first and third values are always by definition interpreted as unsigned. The explicit VR actually used is dictated by the VR needed to represent the second value, which will be consistent with Pixel Representation (0028,0103).</p>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+            <div class="section">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h6 class="title">
+                           <a id="sect_C.7.6.3.1.6" shape="rect"></a>C.7.6.3.1.6 Palette Color Lookup Table Data</h6>
+                     </div>
+                  </div>
+               </div>
+               <p>Palette Color Lookup Table Data (0028,1201-1204) contain the lookup table data corresponding to the Lookup Table Descriptor (0028,1101-1104).</p>
+               <p>Palette color values must always be scaled across the full range of available intensities. This is indicated by the fact that there are no bits stored and high bit values for palette color data.</p>
+               <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <h3 class="title">Note</h3>
+                  <p>For example, if there are 16 bits per entry specified and only 8 bits of value are truly used then the 8 bit intensities from 0 to 255 must be scaled to the corresponding 16 bit intensities from 0 to 65535. To do this for 8 bit values, simply replicate the value in both the most and least significant bytes.</p>
+               </div>
+               <p>These lookup tables shall be used only when there is a single sample per pixel (single image plane) in the image.</p>
+            </div>
+            <div class="section">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h6 class="title">
+                           <a id="sect_C.7.6.3.1.7" shape="rect"></a>C.7.6.3.1.7 Pixel Aspect Ratio</h6>
+                     </div>
+                  </div>
+               </div>
+               <p>The pixel aspect ratio is the ratio of the vertical size and horizontal size of the pixels in the image specified by a pair of integer values where the first value is the vertical pixel size, and the second value is the horizontal pixel size. To illustrate, consider the example pixel size shown in <a class="xref" href="sect_C.7.6.3.html#figure_C.7.6.3.1.7-1" title="Figure C.7.6.3.1.7-1. Example of Pixel Size and Aspect Ratio" shape="rect">Figure C.7.6.3.1.7-1</a>
+               </p>
+               <p>
+                </p>
+               <div class="figure">
+                  <a id="figure_C.7.6.3.1.7-1" shape="rect"></a>
+                  <div class="figure-contents">
+                     <div class="mediaobject">
+                        <img src="figures/PS3.3_C.7.6.3.1.7-1.svg" alt="Example of Pixel Size and Aspect Ratio" />
+                     </div>
+                  </div>
+                  <p class="title">
+                     <strong>Figure C.7.6.3.1.7-1. Example of Pixel Size and Aspect Ratio</strong>
+                  </p>
+               </div>
+               <p>
+                  <br class="figure-break" clear="none" />
+              </p>
+               <p>Pixel Aspect Ratio = Vertical Size \ Horizontal Size = 0.30 mm \0.25 mm. Thus the Pixel Aspect Ratio could be represented as the multi-valued integer string "6\5", "60\50", or any equivalent integer ratio.</p>
+            </div>
+         </div>
+      </div>
+      <div class="navfooter">
+         <hr />
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left" rowspan="1" colspan="1">
+                  <a accesskey="p" href="sect_C.7.6.2.html" shape="rect">Prev</a> </td>
+               <td width="20%" align="center" rowspan="1" colspan="1">
+                  <a accesskey="u" href="sect_C.7.6.html" shape="rect">Up</a>
+               </td>
+               <td width="40%" align="right" rowspan="1" colspan="1"> <a accesskey="n" href="sect_C.7.6.4.html" shape="rect">Next</a>
+               </td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top" rowspan="1" colspan="1">C.7.6.2 Image Plane Module </td>
+               <td width="20%" align="center" rowspan="1" colspan="1">
+                  <a accesskey="h" href="PS3.3.html" shape="rect">Home</a>
+               </td>
+               <td width="40%" align="right" valign="top" rowspan="1" colspan="1"> C.7.6.4 Contrast/Bolus Module</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
